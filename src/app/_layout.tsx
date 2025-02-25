@@ -22,6 +22,7 @@ import { Colors } from "../constants/colors";
 import { clearToken } from "@/state/slices/auth";
 import { Dispatch, UnknownAction } from "@reduxjs/toolkit";
 import { SnackbarProvider } from "../providers/SnackbarProvider/SnackbarProvider";
+import Header from "../components/header";
 
 const customDarkTheme = {
   ...MD3DarkTheme,
@@ -65,7 +66,9 @@ export default function RootLayout() {
         <PaperProvider theme={paperTheme}>
           <ThemeProvider value={paperTheme as unknown as Theme}>
             <SnackbarProvider>
-              <Stack>
+              <Stack
+                screenOptions={{ header: (props) => <Header {...props} /> }}
+              >
                 <Stack.Screen
                   name="index"
                   options={{
@@ -88,7 +91,6 @@ export default function RootLayout() {
                         <IconButton
                           icon="logout-variant"
                           iconColor={paperTheme.colors.tertiary}
-                          size={20}
                           onPress={() => showAlert(dispatch)}
                         />
                       );
@@ -98,7 +100,6 @@ export default function RootLayout() {
                         <IconButton
                           icon="account"
                           iconColor={paperTheme.colors.primary}
-                          size={20}
                           onPress={() => {
                             router.push("/reset-password");
                           }}
