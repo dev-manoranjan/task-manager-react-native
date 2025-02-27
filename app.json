@@ -46,6 +46,12 @@
         "projectId": "f814274c-707a-468e-b672-6696f2e03802"
       }
     },
-    "owner": "manoranjan636"
+    "owner": "manoranjan636",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/f814274c-707a-468e-b672-6696f2e03802"
+    }
   }
 }
